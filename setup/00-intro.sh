@@ -72,9 +72,9 @@ gum spin --spinner dot \
 kubectl wait --for=condition=healthy provider.pkg.crossplane.io \
     --all --timeout=1800s
 
-#echo "## Which Hyperscaler do you want to use?" | gum format
+echo "## Which Hyperscaler do you want to use?" | gum format
 
-HYPERSCALER="aws"
+HYPERSCALER=$(gum choose "google" "aws" "azure")
 
 echo "export HYPERSCALER=$HYPERSCALER" >> .env
 
