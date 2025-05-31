@@ -72,7 +72,7 @@ gum spin --spinner dot \
 kubectl wait --for=condition=healthy provider.pkg.crossplane.io \
     --all --timeout=1800s
 
-export HYPERSCALER=aws
+echo "export HYPERSCALER=aws" >> .env
 
 AWS_ACCESS_KEY_ID=$(gum input --placeholder "AWS Access Key ID" --value "$AWS_ACCESS_KEY_ID")
 echo "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> .env
